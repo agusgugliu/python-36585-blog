@@ -1,0 +1,13 @@
+{% extends 'App_Blog/index.html' %}
+{% load static %}
+
+{% block cuerpo %}
+<a href="{% url 'notas_list' %}">Back to Blog</a>
+<br><br>
+<div>
+    <h1>{{object.titulo}}</h1>
+    <h2>{{object.subtitulo}}</h2>
+    <h4>{{object.autor}} ({{object.fecha}})</h4>
+    <p><i>{{object.cuerpo}}</i></p>
+</div>
+{% endblock %}
