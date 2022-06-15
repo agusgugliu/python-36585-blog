@@ -1,0 +1,62 @@
+# Python-36585: TP Final
+- **Alumno:** Agustín Gugliuzza Piccinini
+- **E-Mail:** agusgugliuzza@gmail.com
+---
+## Consigna
+- Crear una aplicación web estilo blog programada en Python Django, la cual tendrá:
+    - admin
+    - perfiles
+    - registro
+    - páginas 
+    - formularios
+- La entrega deberá realizarse enviando el link a **GitHub**, en el **README.md** deberá estar el nombre completo de los participantes y una descripción contando qué hizo cada uno.
+- En el GitHub debe haber un **vídeo** donde se muestre la web funcionando en no más de 10 minutos.
+- Dentro del GitHub deberá existir una carpeta con, por lo menos, **3 casos de prueba** debidamente documentados.
+- Debe existir un acceso a una vista de **"Acerca de mi"**, donde se contará acerca de los dueños de la página manejado en el route **about/**.
+- Contar con algún acceso a una vista de blogs que debe alojarse en el route **pages/** (es decir, un html que permite listar todos los blogs de la BBDD, con una información mínima de dicho blog).
+- Acceder a una pantalla que contendrá las páginas. Al cliquear en "Leer Más" debe navegar al detalle de la page mediante un route **pages/\<pageID>**.
+- Si no existe ninguna página, mostrar un "No hay páginas aún".
+- Para crear, editar o borrar las fotos debes estar registrado como **Administrador**.
+- Cada blog, es decir, cada **model Blog** debe tener como mínimo:
+    - título
+    - subtítulo
+    - cuerpo
+    - autor
+    - fecha
+    - imagen
+- Piezas sugeridas (no deben estar todas pero debe haber por lo menos un CRUD completo y un sólido módulo de Login):
+    - NavBar
+    - Home
+    - About
+    - Pages
+    - Login
+    - Signup
+    - Messages
+    - Profile
+    - Logout
+    - Get Pages
+    - Get Page
+    - Create Page
+    - Update Page
+    - Delete Page
+    - Get Profile
+    - Update Profile
+- **Requisitos Base**
+    - Inicio: *al momento de ingresar a la app en la ruta base*. 
+    - Visualizar el **home** del blog.
+    - Poder listar todas las páginas del blog, poder ver en detalle cada una, poder crear/editar/borrar páginas del blog.
+    - Las páginas están formadas por un título, un contenido en editor de texto avanzado (ckeditor, por ejemplo), una imagen, fecha de posteo.
+    - Tener una app de registro donde se pueden registrar usuarios en el route **accounts/signup**, un usuario está compuesto por:
+        - e-mail
+        - contraseña
+        - username
+    - Tener una app de login en el route **accounts/login**, la cual permite loguearse con los datos de administrador o de usuario normal.
+    - Tener una app de perfiles en el route **accounts/profile**, la cual muestra la información de nuestro usuario y permite modificar/borrar:
+        - imagen
+        - nombre
+        - descripción
+        - link a página web
+        - e-mail 
+        - contraseña
+    - Contar con un admin en el route **admin/**, donde se puedan manejar las apps y los datos en las apps.
+    - Tener una app de mensajería en el route **messages/** para que los perfiles se puedan contactar entre sí.

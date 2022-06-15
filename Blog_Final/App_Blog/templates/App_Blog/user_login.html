@@ -1,0 +1,12 @@
+{% extends 'App_Blog/index.html' %}
+{% load static %}
+
+{% block cuerpo %}
+    <br><br>    
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <br><br>
+        <button type="submit">Login</button>
+    </form>
+{% endblock %}

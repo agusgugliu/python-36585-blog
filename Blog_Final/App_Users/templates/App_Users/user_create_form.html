@@ -1,0 +1,14 @@
+{% extends 'App_Blog/index.html' %}
+{% load static %}
+
+{% block cuerpo %}
+<br><br>
+<a href="{% url 'notas_list' %}">Back to Blog</a>
+<br><br>
+<!--<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <br><br>
+    <input type="submit" value="Create Account">
+</form>-->
+{% endblock %}

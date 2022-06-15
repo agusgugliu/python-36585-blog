@@ -1,0 +1,12 @@
+{% extends 'App_Blog/index.html' %}
+{% load static %}
+
+{% block cuerpo %}
+    {% if object_list %}
+        {% for nota in object_list %}
+        
+        {% endfor %}
+    {% else %}
+        <p style="color:red"><i>Aún no se ha cargado ninguna <strong>nota</strong>.</i></p>
+    {% endif %}
+{% endblock %}
