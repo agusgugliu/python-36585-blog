@@ -71,7 +71,9 @@
                             <span class="text">Logout</span>
                         </a>
                     </li>
-                    
+                    <li>
+        
+                    </li>
                     <!-- -------------------- -->
                     {% else %}
                     <!-- SOLO LAS VEN DESLOGUEADOS -->
@@ -130,7 +132,8 @@
                             <!--<li class="list-inline-item">⋅</li>-->
                             <li class="list-inline-item"><a href="https://github.com/agusgugliu">GitHub</a></li>
                             <!--<li class="list-inline-item>">⋅</li>-->
-                            <li class="list-inline-item" style="color:beige">Fecha: {% now 'd/m/Y' %}</li>
+                            <li class="list-inline-item" style="color:beige">{% now 'd/m/Y' %}</li>
+                            <li class="list-inline-item" style="color:beige">{{user.username}}</li>
                             <!--<li class="list-inline-item">⋅</li>-->
                             <!--<li class="list-inline-item"><a href="#!">Terms of Use</a></li>
                             <li class="list-inline-item">⋅</li>
