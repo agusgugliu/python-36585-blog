@@ -1,12 +1,14 @@
-from django.shortcuts import render
-from django.contrib.auth import login, logout, authenticate
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.messages.views import SuccessMessageMixin
-from django.contrib.auth.forms import UserCreationForm
+#from django.shortcuts import render
+#from django.contrib.auth import login, logout, authenticate
+#from django.contrib.auth.forms import AuthenticationForm
+#from django.contrib.messages.views import SuccessMessageMixin
+#from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
 from django.template import loader
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.views import LoginView, LogoutView
 from App_Blog.models import ModelBlog
