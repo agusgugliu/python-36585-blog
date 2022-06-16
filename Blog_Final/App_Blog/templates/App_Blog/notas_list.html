@@ -4,9 +4,23 @@
 {% block cuerpo %}
     {% if object_list %}
         {% for nota in object_list %}
-        
+        <br>
+        <li>
+            <a href="{% url 'notas_detail' nota.id %}"><strong>{{nota.titulo}}</strong></a><br>
+            {% if user.is_authenticated %}
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="{% url 'notas_update' nota.id %}">Update</a>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <a href="{% url 'notas_delete' nota.id %}">Delete</a>
+            {% endif %}
+        </li>
         {% endfor %}
     {% else %}
+        <br><br>
         <p style="color:red"><i>Aún no se ha cargado ninguna <strong>nota</strong>.</i></p>
+        <br><br>
     {% endif %}
+    <br><br>
+    <a class="btn btn-primary" href="{% url 'notas_create' %}">New Blog</a>
 {% endblock %}

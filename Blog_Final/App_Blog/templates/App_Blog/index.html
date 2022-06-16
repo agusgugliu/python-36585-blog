@@ -24,8 +24,8 @@
     <body>
         <nav class="navbar navbar-dark bg-dark static-top">
             <div class="container">
-                <img src="https://jobs.coderhouse.com/assets/logos_coderhouse.png" alt="Logo de CoderHouse" width="125" height="40">
-              
+                <img src="https://jobs.coderhouse.com/assets/logos_coderhouse.png" alt="Logo de CoderHouse" height="40">
+                <!--<img src="https://i.postimg.cc/3Jtnwpvx/logo-AG.png" height="40">-->
                 
             <div class="navigation">
                 <ul>
@@ -38,7 +38,7 @@
                     </li>
 
                     <li class="list">
-                        <a href="#!">
+                        <a href="{% url 'about' %}">
                             <span class="icon"><ion-icon name="information-circle-outline"></ion-icon></span>
                             <span class="text">Author</span>
                         </a>
@@ -47,14 +47,14 @@
                     <!-- SOLO LAS VEN LOGUEADO -->
                     {% if user.is_authenticated %}
                     <li class="list">
-                        <a href="{% url 'notas' %}">
+                        <a href="{% url 'notas_list' %}">
                             <span class="icon"><ion-icon name="newspaper-outline"></ion-icon></span>
                             <span class="text">Blog</span>
                         </a>
                     </li>
                     
                     <li class="list">
-                        <a href="#!">
+                        <a href="{% url 'user_profile' user.id %}">
                             <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
                             <span class="text">Profile</span>
                         </a>
@@ -63,6 +63,12 @@
                         <a href="#!">
                             <span class="icon"><ion-icon name="chatbubbles-outline"></ion-icon></span>
                             <span class="text">Chat</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="{% url 'user_logout' %}">
+                            <span class="icon"><ion-icon name="close-circle-outline"></ion-icon></span>
+                            <span class="text">Logout</span>
                         </a>
                     </li>
                     

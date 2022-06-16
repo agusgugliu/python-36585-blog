@@ -1,0 +1,17 @@
+{% extends 'App_Blog/index.html' %}
+{% load static %}
+
+{% block cuerpo %}
+<br>
+<a href="{% url 'homepage' %}">Back to Home</a><br>
+<a href="{% url 'user_edit' user.id %}">Edit Profile</a>
+<br><br>
+<ul>
+    <li><strong>First Name:</strong> {{object.first_name}}</li>
+    <li><strong>Last Name:</strong> {{object.last_name}}</li>
+    <li><strong>E-Mail:</strong> {{object.email}}</li>
+    <li><strong>Username:</strong> {{object.username}}</li>
+</ul>
+
+<img height="150" src="{{object.avatar_set.first.image.url}}"/>
+{% endblock %}

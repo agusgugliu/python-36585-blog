@@ -7,19 +7,19 @@ from django.contrib.auth.models import User
 
 
 class SignUpView(SuccessMessageMixin, CreateView):
-  template_name = 'App_User/user_create_form.html'
+  template_name = 'App_Users/user_create_form.html'
   success_url = reverse_lazy('user_login')
   form_class = UserCreationForm
   success_message = "New user created!"
 
 class BloggerProfile(DetailView):
     model = User
-    template_name = "App_User/user_detail.html"
+    template_name = "App_Users/user_detail.html"
 
 
 class BloggerUpdate(LoginRequiredMixin, UpdateView):
     model = User
-    template_name = "App_User/user_update_form.html"
+    template_name = "App_Users/user_update_form.html"
     fields = ["username", "email", "first_name", "last_name"]
 
     def get_success_url(self):

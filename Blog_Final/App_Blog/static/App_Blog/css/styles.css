@@ -11375,6 +11375,11 @@ header{
   background-size: 100% 100%;
 }
 
+logo_ag{
+  background-image: url("../assets/img/logo_AG.png");
+  background-position: center center;
+  background-size: 100% 100%;
+}
 
 /*--------------------------------------------------------------*/
 /*--------------------------------------------------------------*/

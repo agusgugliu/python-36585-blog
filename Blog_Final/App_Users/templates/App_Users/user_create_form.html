@@ -3,12 +3,12 @@
 
 {% block cuerpo %}
 <br><br>
-<a href="{% url 'notas_list' %}">Back to Blog</a>
+<a href="{% url 'homepage' %}">Back to Home</a>
 <br><br>
-<!--<form method="POST">
+<form method="POST">
     {% csrf_token %}
     {{form.as_p}}
     <br><br>
     <input type="submit" value="Create Account">
-</form>-->
+</form>
 {% endblock %}
