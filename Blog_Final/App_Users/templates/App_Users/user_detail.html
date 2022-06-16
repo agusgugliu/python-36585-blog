@@ -7,10 +7,22 @@
 <a href="{% url 'user_edit' user.id %}">Edit Profile</a>
 <br><br>
 <ul>
-    <li><strong>First Name:</strong> {{object.first_name}}</li>
-    <li><strong>Last Name:</strong> {{object.last_name}}</li>
-    <li><strong>E-Mail:</strong> {{object.email}}</li>
-    <li><strong>Username:</strong> {{object.username}}</li>
+    <li><strong>First Name:</strong> 
+        &nbsp;&nbsp;
+        {{object.first_name}}
+    </li>
+    <li><strong>Last Name:</strong> 
+        &nbsp;&nbsp;
+        {{object.last_name}}
+    </li>
+    <li><strong>E-Mail:</strong>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {{object.email}}
+    </li>
+    <li><strong>Username:</strong> 
+        &nbsp;&nbsp;
+        {{object.username}}
+    </li>
 </ul>
 
 <img height="150" src="{{object.avatar_set.first.image.url}}"/>

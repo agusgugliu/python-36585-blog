@@ -7,10 +7,10 @@
         {% csrf_token %}
         {{form.as_p}}
         <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button type="submit">Login</button>
-        <br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    
-            <a class="btn btn-primary" href="{% url 'user_signup' %}">Sign-Up</a>
+        <button type="submit">&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;</button>
     </form>
+    <br><br>
     
+    <p style="color:grey;">If you don't currently have a <b>User</b>, please <strong><a href="{% url 'user_signup' %}">create one here</a></strong>.</p>
+
 {% endblock %}
