@@ -1,0 +1,13 @@
+{% extends 'App_Blog/index.html' %}
+{% load static %}
+
+{% block cuerpo %}
+<form method="POST">{% csrf_token %}
+    <p>Are you sure you want to delete <b>"{{object.titulo}} ({{object.subtitulo}})"</b>?</p>
+    {{form}}
+    <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="submit" value="&nbsp;&nbsp;&nbsp;Yes, delete.&nbsp;&nbsp;&nbsp;">
+</form>
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'notas_list' %}">Back to Blog</a>
+{% endblock %}
