@@ -13,18 +13,28 @@
 <br><br>
 
 <div>
-    <!--<h1><u>{{object.titulo}}</u></h1>
-    <h2>{{object.subtitulo}}</h2>
-    <h4>{{object.autor}} ({{object.fecha}})</h4>
-    <p><i>{{object.cuerpo}}</i></p>-->
     <p style="font-size:30pt;"><u><b>{{object.titulo}}</b></u></p>
     <p style="font-size:22pt;"><b>{{object.subtitulo}}</b></p>
     <p style="font-size:16pt;"><b>Author: </b>{{object.autor}}</p>
     <p style="font-size:16pt;"><b>Date: </b>{{object.fecha}}</p>
     <p style="font-size:14pt;">{{object.cuerpo}}</p>
-    
 </div>
 
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="{% url 'notas_update' object.id %}">
+    <span class="icon"><ion-icon name="refresh-circle"></ion-icon></span>
+    <span class="text">Update</span>
+</a>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="{% url 'notas_delete' object.id %}">
+    <span class="icon"><ion-icon name="trash"></ion-icon></span>
+    <span class="text">Delete</span>
+</a>    
 <br><br>
 
 {% endblock %}
