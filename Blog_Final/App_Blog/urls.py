@@ -11,7 +11,6 @@ urlpatterns = [
     path('details/<pk>/', views.BlogDetail.as_view(), name='notas_detail'),
     path('edit/<pk>/', views.BlogUpdate.as_view(), name='notas_update'),
     path('delete/<pk>/', views.BlogDelete.as_view(), name='notas_delete'),
-    path('chat/', views.blogChat, name='chat'),
     path('login/', views.BlogLogin.as_view(), name='user_login'),
     path('logout/', views.BlogLogout.as_view(), name='user_logout'),
 ]

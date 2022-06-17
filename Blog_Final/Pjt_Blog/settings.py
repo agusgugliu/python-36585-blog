@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ["testserver", "localhost", "127.0.0.1"]
 INSTALLED_APPS = [
     'App_Blog.apps.AppBlogConfig',
     'App_Users.apps.AppUsersConfig',
+    'App_Chat.apps.AppChatConfig',
     'bootstrap5',
     'django.contrib.admin',
     'django.contrib.auth',
