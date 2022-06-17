@@ -3,12 +3,21 @@
 
 {% block cuerpo %}
 <br>
-<a href="{% url 'user_profile' user.id %}">Back to Profile</a>
+&nbsp;&nbsp;&nbsp;
+
+<a href="{% url 'user_profile' user.id %}">
+    <span class="icon"><ion-icon name="person-circle"></ion-icon></span>
+    <span class="text">Back to Profile</span>
+</a>
+
 <br><br>
+
 <form method="POST">
     {% csrf_token %}
     {{form.as_p}}
     <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;
     <input type="submit" value="Save">
 </form>
+<br><br>
 {% endblock %}

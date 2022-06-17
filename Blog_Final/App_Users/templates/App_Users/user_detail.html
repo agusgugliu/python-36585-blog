@@ -2,11 +2,23 @@
 {% load static %}
 
 {% block cuerpo %}
+
 <br>
-<a href="{% url 'homepage' %}">Back to Home</a><br>
-<a href="{% url 'user_edit' user.id %}">Edit Profile</a>
+&nbsp;&nbsp;&nbsp;
+
+<a href="{% url 'homepage' %}">
+    <span class="icon"><ion-icon name="home"></ion-icon></span>
+    <span class="text">Back to Home</span>
+</a>
+
 <br><br>
+
 <ul>
+    
+    <li><strong>Username:</strong> 
+        &nbsp;&nbsp;&nbsp;
+        {{object.username}}
+    </li>
     <li><strong>First Name:</strong> 
         &nbsp;&nbsp;
         {{object.first_name}}
@@ -19,11 +31,19 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         {{object.email}}
     </li>
-    <li><strong>Username:</strong> 
-        &nbsp;&nbsp;
-        {{object.username}}
-    </li>
+    
 </ul>
-
 <img height="150" src="{{object.avatar_set.first.image.url}}"/>
+
+
+<br><br>
+&nbsp;&nbsp;&nbsp;
+
+<a href="{% url 'user_edit' user.id %}">
+    <span class="icon"><ion-icon name="create"></ion-icon></span>
+    <span class="text">Edit Profile</span>
+</a>
+
+<br><br>
+
 {% endblock %}

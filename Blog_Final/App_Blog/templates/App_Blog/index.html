@@ -7,7 +7,8 @@
         <meta name="description" content="Template Page for AppBlog" />
         <meta name="author" content="Agustín Gugliuzza" />
         
-        <!--<title></title>-->
+        <title>CoderHouse Blog</title>
+
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -24,9 +25,9 @@
     <body>
         <nav class="navbar navbar-dark bg-dark static-top">
             <div class="container">
-                <img src="https://jobs.coderhouse.com/assets/logos_coderhouse.png" alt="Logo de CoderHouse" height="40">
-                <!--<img src="https://i.postimg.cc/3Jtnwpvx/logo-AG.png" height="40">-->
+                <img src="https://jobs.coderhouse.com/assets/logos_coderhouse.png" alt="Logo de CoderHouse" height="35">
                 
+                                
             <div class="navigation">
                 <ul>
                     
@@ -60,7 +61,7 @@
                         </a>
                     </li>
                     <li class="list">
-                        <a href="#!">
+                        <a href="{% url 'chat' %}">
                             <span class="icon"><ion-icon name="chatbubbles-outline"></ion-icon></span>
                             <span class="text">Chat</span>
                         </a>
@@ -74,8 +75,9 @@
                     <li>
         
                     </li>
-                    <!-- -------------------- -->
+                    
                     {% else %}
+                    
                     <!-- SOLO LAS VEN DESLOGUEADOS -->
                     <li class="list">
                         <a href="{% url 'user_login' %}">
@@ -89,8 +91,9 @@
                             <span class="text">Sign-Up</span>
                         </a>
                     </li>
-                    {% endif %}
-                    <!--<div class="indicator"></div>-->
+                    
+                    {% endif %} 
+                    
                 </ul>
             </div>
     
@@ -103,18 +106,7 @@
         {% block cuerpo %}
         {% endblock %}
         
-        <!--FOR INDICATOR-->
-        <script>
-            const list = document.querySelectorAll('.list');
-            function activeLink(){
-                list.forEach((item) =>
-                item.classList.remove('active'));
-                this.classList.add('active');
-            }
-            list.forEach((item) =>
-            item.addEventListener('click', activeLink));
-        </script>
-       
+               
         <!--ION Icons-->
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -134,12 +126,8 @@
                             <!--<li class="list-inline-item>">⋅</li>-->
                             <li class="list-inline-item" style="color:beige">{% now 'd/m/Y' %}</li>
                             <li class="list-inline-item" style="color:beige">{{user.username}}</li>
-                            <!--<li class="list-inline-item">⋅</li>-->
-                            <!--<li class="list-inline-item"><a href="#!">Terms of Use</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
-                        </ul>
-                        <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2021. All Rights Reserved.</p>-->
+                            
+
                     </div>
                     <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
                         <ul class="list-inline mb-0">

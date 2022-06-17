@@ -23,6 +23,14 @@ def homepage(request):
 
 
 
+def blogChat(request):
+    template = loader.get_template('App_Blog/chat_list.html')
+    context = {}
+    return HttpResponse(template.render(context, request))
+
+
+
+
 def aboutAuthor(request):
     template = loader.get_template('App_Blog/aboutme.html')
     context = {}

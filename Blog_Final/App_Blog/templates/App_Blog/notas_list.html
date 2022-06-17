@@ -6,21 +6,43 @@
         {% for nota in object_list %}
         <br>
         <li>
-            <a href="{% url 'notas_detail' nota.id %}"><strong>{{nota.titulo}}</strong></a><br>
-            {% if user.is_authenticated %}
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="{% url 'notas_update' nota.id %}">Update</a>
+           
+            <a href="{% url 'notas_detail' nota.id %}">
+                <span class="icon"><ion-icon name="star-half"></ion-icon></span>
+                <span class="text">
+                    <strong>{{nota.titulo}}</strong>
+                </span>
+            </a>
 
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-            <a href="{% url 'notas_delete' nota.id %}">Delete</a>
-            {% endif %}
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           
+            <a href="{% url 'notas_update' nota.id %}">
+                <span class="icon"><ion-icon name="refresh-circle"></ion-icon></span>
+                <span class="text">Update</span>
+            </a>
+
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+            <a href="{% url 'notas_delete' nota.id %}">
+                <span class="icon"><ion-icon name="trash"></ion-icon></span>
+                <span class="text">Delete</span>
+            </a>
+            
         </li>
         {% endfor %}
+        
     {% else %}
         <br><br>
-        <center><p style="color:red"><i>Aún no se ha cargado ninguna <strong>nota</strong>.</i></p></center>
+        <center>
+            <p style="color:red;font-size:larger;">No <strong>blog</strong> has been uploaded yet.</p>
+        </center>
         <br><br>
     {% endif %}
     <br><br>
-    <a class="btn btn-primary" href="{% url 'notas_create' %}">New Blog</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a class="btn btn-primary" href="{% url 'notas_create' %}">
+        <span class="text">New Blog</span>
+        <span class="icon"><ion-icon name="add-circle-sharp"></ion-icon></span>
+    </a>
+    <br><br>
 {% endblock %}

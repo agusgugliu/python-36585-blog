@@ -2,13 +2,21 @@
 {% load static %}
 
 {% block cuerpo %}
+
 <br>
+
 <a href="{% url 'notas_list' %}">Back to Blog</a>
+
 <br><br>
+
 <form method="POST">
     {% csrf_token %}
     {{form.as_p}}
     <br><br>
-    <input type="submit" value="Save">
+    &nbsp;&nbsp;&nbsp;
+    <input type="submit" value="&nbsp;&nbsp;Save&nbsp;&nbsp;">
 </form>
+
+<br><br>
+
 {% endblock %}
