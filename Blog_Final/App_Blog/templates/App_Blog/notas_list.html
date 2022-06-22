@@ -3,14 +3,17 @@
 
 {% block cuerpo %}
     {% if object_list %}
+        
         {% for nota in object_list %}
-        <br>
+        
+        <br><br>
+
         <li>
            
             <a href="{% url 'notas_detail' nota.id %}">
                 <span class="icon"><ion-icon name="star-half"></ion-icon></span>
                 <span class="text">
-                    <strong>{{nota.titulo}}</strong>
+                    <strong>{{nota.titulo}}</strong> ({{nota.autor}})
                 </span>
             </a>
 
@@ -27,22 +30,32 @@
                 <span class="icon"><ion-icon name="trash"></ion-icon></span>
                 <span class="text">Delete</span>
             </a>
+           
             
         </li>
+        
         {% endfor %}
         
     {% else %}
+        
         <br><br>
+        
         <center>
             <p style="color:red;font-size:larger;">No <strong>blog</strong> has been uploaded yet.</p>
         </center>
+        
         <br><br>
+    
     {% endif %}
+    
     <br><br>
     &nbsp;&nbsp;&nbsp;&nbsp;
+    
     <a class="btn btn-primary" href="{% url 'notas_create' %}">
         <span class="text">New Blog</span>
         <span class="icon"><ion-icon name="add-circle-sharp"></ion-icon></span>
     </a>
+    
     <br><br>
+
 {% endblock %}
