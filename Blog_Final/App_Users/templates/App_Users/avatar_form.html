@@ -1,0 +1,25 @@
+{% extends 'App_Blog/index.html' %}
+{% load static %}
+
+{% block cuerpo %}
+<br><br>
+&nbsp;&nbsp;&nbsp;
+
+<a href="{% url 'user_profile' user.id %}">
+    <span class="icon"><ion-icon name="person-circle"></ion-icon></span>
+    <span class="text">Back to Profile</span>
+</a>
+
+<br><br>
+
+<form method="POST" enctype="multipart/form-data">{% csrf_token %}
+    {{form.as_p}}
+    
+    <br><br>
+    &nbsp;&nbsp;&nbsp;
+
+    <button type="submit">&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;</button>
+</form>
+
+<br><br>
+{% endblock %}

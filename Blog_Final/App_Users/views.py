@@ -6,7 +6,11 @@ from django.views.generic import CreateView, UpdateView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from App_Users.models import Avatar
+from App_Users.forms import AvatarForm
+
 ###############################################################
+###############################################################
+
 class SignUpView(SuccessMessageMixin, CreateView):
   template_name = 'App_Users/user_create_form.html'
   success_url = reverse_lazy('user_login')
@@ -37,6 +41,13 @@ class BloggerUpdate(LoginRequiredMixin, UpdateView):
 
 
 
-def showAvatar(request):
-  avatares = Avatar.objects.filter(user = request.user.id)
-  return render(request, 'App_Blog/index.html', {"url":avatares[0].imagen.url})
+def addAvatar(request):
+  if request.method == 'POST':
+    form = AvatarForm(request.POST, request.FILES)
+    if form.is_valid():
+      u = User.objects.get(username=request.user)
+      avatar = Avatar(user=u, image=form.cleaned_data['image'])
+      avatar.save()
+  else:
+    form = AvatarForm()
+  return render(request, 'App_Users/avatar_form.html', {'form':form})
