@@ -18,7 +18,10 @@
             </a>
 
             <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-           
+
+            {% if nota.autor_id == user.id %}
+            
+            
             <a href="{% url 'notas_update' nota.id %}">
                 <span class="icon"><ion-icon name="refresh-circle"></ion-icon></span>
                 <span class="text">Update</span>
@@ -31,6 +34,7 @@
                 <span class="text">Delete</span>
             </a>
            
+            {% endif %}
             
         </li>
         
