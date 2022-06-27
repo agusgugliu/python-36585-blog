@@ -2,61 +2,42 @@
 - **Alumno:** Agustín Gugliuzza Piccinini
 - **E-Mail:** agusgugliuzza@gmail.com
 ---
-## Consigna
-- Crear una aplicación web estilo blog programada en Python Django, la cual tendrá:
-    - admin
-    - perfiles
-    - registro
-    - páginas 
-    - formularios
-- La entrega deberá realizarse enviando el link a **GitHub**, en el **README.md** deberá estar el nombre completo de los participantes y una descripción contando qué hizo cada uno.
-- En el GitHub debe haber un **vídeo** donde se muestre la web funcionando en no más de 10 minutos.
-- Dentro del GitHub deberá existir una carpeta con, por lo menos, **3 casos de prueba** debidamente documentados.
-- Debe existir un acceso a una vista de **"Acerca de mi"**, donde se contará acerca de los dueños de la página manejado en el route **about/**.
-- Contar con algún acceso a una vista de blogs que debe alojarse en el route **pages/** (es decir, un html que permite listar todos los blogs de la BBDD, con una información mínima de dicho blog).
-- Acceder a una pantalla que contendrá las páginas. Al cliquear en "Leer Más" debe navegar al detalle de la page mediante un route **pages/\<pageID>**.
-- Si no existe ninguna página, mostrar un "No hay páginas aún".
-- Para crear, editar o borrar las fotos debes estar registrado como **Administrador**.
-- Cada blog, es decir, cada **model Blog** debe tener como mínimo:
-    - título
-    - subtítulo
-    - cuerpo
-    - autor
-    - fecha
-    - imagen
-- Piezas sugeridas (no deben estar todas pero debe haber por lo menos un CRUD completo y un sólido módulo de Login):
-    - NavBar
-    - Home
-    - About
-    - Pages
-    - Login
-    - Signup
-    - Messages
-    - Profile
-    - Logout
-    - Get Pages
-    - Get Page
-    - Create Page
-    - Update Page
-    - Delete Page
-    - Get Profile
-    - Update Profile
-- **Requisitos Base**
-    - Inicio: *al momento de ingresar a la app en la ruta base*. 
-    - Visualizar el **home** del blog.
-    - Poder listar todas las páginas del blog, poder ver en detalle cada una, poder crear/editar/borrar páginas del blog.
-    - Las páginas están formadas por un título, un contenido en editor de texto avanzado (ckeditor, por ejemplo), una imagen, fecha de posteo.
-    - Tener una app de registro donde se pueden registrar usuarios en el route **accounts/signup**, un usuario está compuesto por:
-        - e-mail
-        - contraseña
-        - username
-    - Tener una app de login en el route **accounts/login**, la cual permite loguearse con los datos de administrador o de usuario normal.
-    - Tener una app de perfiles en el route **accounts/profile**, la cual muestra la información de nuestro usuario y permite modificar/borrar:
-        - imagen
-        - nombre
-        - descripción
-        - link a página web
-        - e-mail 
-        - contraseña
-    - Contar con un admin en el route **admin/**, donde se puedan manejar las apps y los datos en las apps.
-    - Tener una app de mensajería en el route **messages/** para que los perfiles se puedan contactar entre sí.
+## ¿Cómo utilizar la aplicación?
+### (1) Clonar Repositorio de GitHub
+
+Primero debemos clonar el repositorio en nuestro localhost, para lo cual debemos ejecutar la función de: `git clone https://github.com/agusgugliu/python-36585-blog.git` en GitBash.
+
+
+### (2) Deployar Ambiente en VS Code
+
+A continuación, debemos abrir el repositorio que acabamos de clonar en nuestro entorno de Visual Studio Code.
+
+
+### (3) Realizar Migraciones y Correr el Servidor
+Lo siguiente a realizar es generar las migraciones y ejecutar el server. Para hacer esto, debemos ejecutar las siguientes 3 sentencias en orden:
+
+- `$ python manage.py makemigrations`
+- `$ python manage.py migrate`
+- `$ python manage.py runserver`
+
+
+### (4) Navegar en la Aplicación
+
+Una vez que ingresemos a la pantalla de la aplicación, vamos a encontrarnos con la pantalla de HomePage. En la parte superior tendremos los cuatro íconos de navegación por defecto (dado que no estamos logueados):
+- Home → es la página de HomePage de la aplicación.
+![HomePage](./Images/HomePage.PNG)
+- Author → tiene la información del autor (personal, educativa y laboral).
+![Author](./Images/Author.PNG)
+- Login → si ya tenemos un usuario generado, nos permite ingresar al blog.
+![Login](./Images/Login.PNG)
+- SignUp → en caso de no tener un usuario, nos permite generarlo mediante username y password.
+![SignUp](./Images/SignUp.PNG)
+
+Una vez estemos logueados en la aplicación, nos aparecerán 3 íconos nuevos:
+- Blog → aquí encontraremos todas las notas que se han cargado en el blog. En esta sección podremos generar una nota nueva y/o modificar o eliminar cualquiera de las notas que hayamos creado nosotros con el usuario con el que nos hemos logueado.
+![Blog](./Images/Blog.PNG)
+![Blog Detail](./Images/BlogDetail.PNG)
+- Profile → nos permite editar nuestro perfil, agregando nuestro e-mail, nombre, apellido e incluso cargar una imagen que servirá como nuestro avatar.
+![Profile](./Images/Profile.PNG)
+- Logout → permite desloguearse de la aplicación.
+![Logout](./Images/Logout.PNG)
